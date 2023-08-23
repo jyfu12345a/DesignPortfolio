@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JDesign•Citations</title>
+
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <header>
+        <a href="https://www.linkedin.com/in/jack-yong-fu-luo/">
+            <img class="icon" src="assets/linkedin_icon.png" alt="linkedin_logo">
+        </a>
+        <nav class="main-navigation">
+			<a href="index.html?opacityTransition=true">home</a>
+			<a href="index.html#projects">projects</a>
+			<a href="about.html?opacityTransition=true">about</a>
+			<a href="contact.html?opacityTransition=true">contact</a>
+		</nav>
+    </header>
+
+    <section id="projects" class="container">
+        <h1>Used Citations</h1>
+
+        <h2>Lato Font</h2><h3>https://fonts.google.com/specimen/Lato</h3>
+        <h2>Quark Font</h2><h3>https://www.cufonfonts.com/font/quark</h3>
+        <h2>LinkedIn Icon</h2><h3>https://icones.pro/en/linkedin-black-round-icon/</h3>
+        <h2>Add MP4 Video to HTML5</h2><h3>https://www.tutorialspoint.com/How-to-embed-a-video-using-HTML-code#:~:text=To%20embed%20a%20video%20in,height%20of%20the%20video%20appropriately.</h3>
+        <h2>Opacity Background</h2><h3>https://stackoverflow.com/questions/8449933/how-to-transition-css-display-opacity-properties</h3>
+        <h2>Opacity Background</h2><h3>https://stackoverflow.com/questions/35805052/trying-to-trigger-a-css-transition-using-javascript</h3>
+        <h2>Cursor Change</h2><h3>https://www.freecodecamp.org/news/how-to-make-a-custom-mouse-cursor-with-css-and-javascript/</h3>
+        <h2>Colour Root</h2><h3>https://developer.mozilla.org/en-US/docs/Web/CSS/:root</h3>
+    </section>
+
+    <footer>
+        <a class="footer" href="style_guide.html?opacityTransition=true">style guide</a>
+        <a class="footer" href="citations.html?opacityTransition=true">citations</a>
+		<p class="footer">&copy; 2023 Jack Luo | JDesign. All rights reserved.</p>
+	</footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const queryParams = new URLSearchParams(window.location.search);
+            const opacityTransition = queryParams.get("opacityTransition");
+
+            if (opacityTransition === "true") {
+                // Function to change background opacity
+                function changeBackgroundOpacity(newOpacity) {
+                    document.body.style.backgroundColor = `rgba(232, 247, 250, ${newOpacity})`;
+                }
+
+                changeBackgroundOpacity(0.5); // Reduce opacity initially
+
+                setTimeout(function () {
+                    let opacityValue = 0.5;
+                    const opacityChangeInterval = setInterval(function () {
+                        opacityValue += 0.01; // Incrementally increase opacity
+                        changeBackgroundOpacity(opacityValue);
+                        if (opacityValue >= 1) {
+                            clearInterval(opacityChangeInterval);
+                        }
+                    }, 10); // Interval for gradual opacity change
+                }, 1000); // Delay opacity change
+            }
+        });
+    </script>
+</body>
+</html>

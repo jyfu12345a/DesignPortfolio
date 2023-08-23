@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JDesign•Contact</title>
+
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <header>
+        <a href="https://www.linkedin.com/in/jack-yong-fu-luo/">
+            <img class="icon" src="assets/linkedin_icon.png" alt="linkedin_logo">
+        </a>
+        <nav class="main-navigation">
+			<a href="index.html?opacityTransition=true">home</a>
+			<a href="index.html#projects">projects</a>
+			<a href="about.html?opacityTransition=true">about</a>
+			<a href="contact.html?opacityTransition=true">contact</a>
+		</nav>
+    </header>
+
+    <h2 class="contact">My Contact</h2>
+    <h3 class="contact_sentence">Feel to reach out to me through any of the provided contacts :D</h3>
+    <div class="contact_container">
+        <div class="contact_box1">
+            <h4 class="contact">SCHOOL EMAIL</h4>
+            <h3>Jack_luo@sfu.ca</h3>
+            <div class="line"></div>
+            <h4 class="contact">WORK EMAIL</h4>
+            <h3>Jack-luo123@hotmail.com</h3>
+            <div class="line"></div>
+            <h4 class="contact">PHONE</h4>
+            <h3>778-681-9798</h3>
+        </div>
+        <div class="contact_box2">
+            <h4 class="contact">RESUMÉ</h4>
+            <a href="#">
+                <h3 class="contact">View my Resumé</h3>
+            </a>
+            <div class="line"></div>
+            <h4 class="contact">LINKEDIN</h4>
+            <a href="https://www.linkedin.com/in/jack-yong-fu-luo/">
+                <h3 class="contact">View my LinkedIn</h3>
+            </a>
+            <div class="line"></div>
+            <h4 class="contact">INSTAGRAM</h4>
+            <a href="https://www.instagram.com/jack._.luo/">
+                <h3 class="contact">View my Instagram</h3>
+            </a>
+        </div>
+
+        <div class="contact_form">
+            <form action="contact.html" method="post">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required>
+    
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required>
+        
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+        
+                <button type="submit">SEND MESSAGE</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <a class="footer" href="style_guide.html?opacityTransition=true">style guide</a>
+        <a class="footer" href="citations.html?opacityTransition=true">citations</a>
+		<p class="footer">&copy; 2023 Jack Luo | JDesign. All rights reserved.</p>
+	</footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const queryParams = new URLSearchParams(window.location.search);
+            const opacityTransition = queryParams.get("opacityTransition");
+
+            if (opacityTransition === "true") {
+                // Function to change background opacity
+                function changeBackgroundOpacity(newOpacity) {
+                    document.body.style.backgroundColor = `rgba(232, 247, 250, ${newOpacity})`;
+                }
+
+                changeBackgroundOpacity(0.5); // Reduce opacity initially
+
+                setTimeout(function () {
+                    let opacityValue = 0.5;
+                    const opacityChangeInterval = setInterval(function () {
+                        opacityValue += 0.01; // Incrementally increase opacity
+                        changeBackgroundOpacity(opacityValue);
+                        if (opacityValue >= 1) {
+                            clearInterval(opacityChangeInterval);
+                        }
+                    }, 10); // Interval for gradual opacity change
+                }, 1000); // Delay opacity change
+            }
+        });
+    </script>
+</body>
+</html>

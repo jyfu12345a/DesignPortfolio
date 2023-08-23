@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JDesign•JLuo</title>
+
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <header>
+        <a href="https://www.linkedin.com/in/jack-yong-fu-luo/">
+            <img class="icon" src="assets/linkedin_icon.png" alt="linkedin_logo">
+        </a>
+        <nav class="main-navigation">
+			<a href="index.html?opacityTransition=true">home</a> <!-- This ?opacityTransition=true adds a query parameter, for javascript to check -->
+			<a href="index.html#projects">projects</a>
+			<a href="about.html?opacityTransition=true">about</a>
+			<a href="contact.html?opacityTransition=true">contact</a>
+		</nav>
+    </header>
+
+    <div class="background_watermark">
+        <h1 class="background">J</h1>
+    </div>
+
+    <div class="introduction">
+        <h1 class="introduction">Hi, I'm Jack, an ambitious design student.</h1>
+            <p class="introduction">I craft purposeful designs that address real-world
+                challenges, focusing on clarity and meaning to 
+                ensure seamless communication between my creations and the users.</p>
+    </div>
+
+    <section id="projects" class="container">
+        <h1>Explore My Latest Projects</h1>
+    </section>
+
+    <section class="container">
+        <h2 class="project_title">FRIJ</h2>
+        <div class="project">
+            <div class="project_box1">
+                <h3>Enhancing your grocery organization app</h3>
+                <p>FRIJ: Simplifying grocery management for seniors. Effortlessly organize shopping, track expiring items,
+                    and get personalized recipe suggestions. Empowering independence with ease.</p>
+                <button><a class="button" href="project_one_FRIJ.html?opacityTransition=true">EXPLORE PROJECT</a></button>
+            </div>
+            <div class="project_box2">
+                <a href="project_one_FRIJ.html?opacityTransition=true"><img class="frij" src="assets/frij_homepage.png"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="project_title">KBDfans</h2>
+        <div class="project">
+            <div class="project_box1">
+                <h3>Renovating and proposing a minimalistic addition to e-commerce</h3>
+                <p>Revamped KBDfans: My team and I redesigned their homepage and introduced an intervention enhancing the
+                    custom keyboard buying experience for newer customers.</p>
+                <button><a class="button" href="project_two_KBDfans.html?opacityTransition=true">EXPLORE PROJECT</a></button>
+            </div>
+            <div class="project_box2">
+                <a href="project_two_KBDfans.html?opacityTransition=true"><img class="kbd" src="assets/kbdfans_homepage.png"></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a class="footer" href="style_guide.html?opacityTransition=true">style guide</a>
+        <a class="footer" href="citations.html?opacityTransition=true">citations</a>
+		<p class="footer">&copy; 2023 Jack Luo | JDesign. All rights reserved.</p>
+	</footer>
+
+    <!-- Referenced from: https://www.freecodecamp.org/news/how-to-make-a-custom-mouse-cursor-with-css-and-javascript/ -->
+    <script>
+        // Get a reference to the body element
+        const body = document.body;
+    
+        // Get references to all links and images on the page
+        const links = document.querySelectorAll('a');
+        const images = document.querySelectorAll('img');
+    
+        // Set the default cursor
+        body.style.cursor = 'url("assets/circle_cursor.png"), auto';
+    
+        // Add event listeners for links and images to change cursor on hover
+        links.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                body.style.cursor = 'url("assets/square_cursor.png"), pointer';
+            });
+            link.addEventListener('mouseout', () => {
+                body.style.cursor = 'url("assets/circle_cursor.png"), auto';
+            });
+        });
+    
+        images.forEach(image => {
+            image.addEventListener('mouseover', () => {
+                body.style.cursor = 'url("assets/square_cursor.png"), pointer';
+            });
+            image.addEventListener('mouseout', () => {
+                body.style.cursor = 'url("assets/circle_cursor.png"), auto';
+            });
+        });
+    </script>
+
+    <!-- Background Opacity Change from: https://stackoverflow.com/questions/8449933/how-to-transition-css-display-opacity-properties and https://stackoverflow.com/questions/35805052/trying-to-trigger-a-css-transition-using-javascript-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const queryParams = new URLSearchParams(window.location.search);
+            const opacityTransition = queryParams.get("opacityTransition");
+
+            if (opacityTransition === "true") {
+                // Function to change background opacity
+                function changeBackgroundOpacity(newOpacity) {
+                    document.body.style.backgroundColor = `rgba(232, 247, 250, ${newOpacity})`;
+                }
+
+                changeBackgroundOpacity(0.5); // Reduce opacity initially
+
+                setTimeout(function () {
+                    let opacityValue = 0.5;
+                    const opacityChangeInterval = setInterval(function () {
+                        opacityValue += 0.01; // Incrementally increase opacity
+                        changeBackgroundOpacity(opacityValue);
+                        if (opacityValue >= 1) {
+                            clearInterval(opacityChangeInterval);
+                        }
+                    }, 10); // Interval for gradual opacity change
+                }, 1000); // Delay opacity change
+            }
+        });
+    </script>
+</body>
+</html>

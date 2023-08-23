@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>JDesign•Style Guide</title>
+	<link href="css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+	<header>
+		<nav class="main-navigation">
+			<a href="index.html?opacityTransition=true">home</a>
+			<a href="index.html#projects">projects</a>
+			<a href="about.html?opacityTransition=true">about</a>
+			<a href="contact.html?opacityTransition=true">contact</a>
+		</nav>
+		<h1>Style Guide</h1>
+	</header>
+
+	<hr>
+
+	<section id="visual_elements">
+		<h2 class="style_guide">visual elements</h2>
+
+		<h2>Typography</h2>
+		<div class="block-container">
+			<div class="block-item">
+				<p class="header-font">Quark</p>
+				<p class="header-font-example">Aa 123456789</p>
+				<p class="component-detail">Header Font</p>
+			</div>
+			<div class="block-item">
+				<p class="body-font">Lato</p>
+				<p class="body-font-example">Aa 123456789</p>
+				<p class="component-detail">Body Font</p>
+			</div>
+		</div>
+
+		<h2>Colours</h2>
+		<div class="block-container">
+			<div class="block-item">
+				<div class="swatch" id="primary-text"></div>
+				<p class="swatch-detail">Primary Text | #000000</p>
+			</div>
+			<div class="block-item">
+				<div class="swatch" id="secondary-bg"></div>
+				<p class="swatch-detail">Primary BG | #E8F7FA</p>
+			</div>
+			<div class="block-item">
+				<div class="swatch" id="accent"></div>
+				<p class="swatch-detail">Accent | #68C3D4</p>
+			</div>
+		</div>
+		<section>
+			<h2>Imagery</h2>
+			<img src="assets/self_img1.jpg" width="500px">
+		</section>
+	</section>
+
+	<hr>
+
+	<section id="interactive_elements">
+		<h2 class="style_guide">Interactive Elements</h2>
+		<section>
+			<h2>In-text link</h2>
+			<p>This is <a href="style_guide.html">an in-text link</a>.</p>
+		</section>
+		<section>
+			<h2>Navigation Link</h2>
+			<nav>
+				<a href="style_guide.html">NAVIGATE LINK 1</a> <br>
+				<a href="style_guide.html">NAVIGATE LINK 2</a>
+
+			</nav>
+		</section>
+		<section>
+			<h2>Submit/Reset Buttons</h2>
+			<form>
+				<input type="submit">
+				<input type="reset">
+			</form>
+			<br>
+			<button>EXPLORE PROJECT</button>
+		</section>
+		<section>
+			<h2>Text Input Field with Label</h2>
+			<form>
+				<label for="field-1">Full name</label>
+				<input type="text" id="field-1">
+			</form>
+		</section>
+		<section>
+			<h2>Image as a Link</h2>
+			<a href="https://www.linkedin.com/in/jack-yong-fu-luo/">
+				<img class="icon" src="assets/linkedin_icon.png" alt="linkedin_logo">
+			</a>
+		</section>
+	</section>
+
+	<hr />
+
+	<section id="text_elements">
+		<h2 class="style_guide">Text Elements</h2>
+		<section>
+			<h2>Heading Sizes</h2>
+			<h1>Heading 1 | 48px</h1>
+			<h2>Heading 2 | 32px</h2>
+			<h3>Heading 3 | 24px</h3>
+			<h4>Heading 4 | 16px</h4>
+			<h5>Heading 5 | 13px</h5>
+			<h6>Heading 6 | 10px</h6>
+		</section>
+		<section>
+			<h2>Paragraphs</h2>
+			<p>Something Like a Paragraph.</p>
+		</section>
+		<section>
+			<h2>Numbered Lists</h2>
+			<p>My List</p>
+			<ol>
+				<li>First</li>
+				<li>Second</li>
+				<li>Third</li>
+				<li>Fourth</li>
+			</ol>
+		</section>
+	</section>
+
+	<hr>
+
+	<section id="combined_elements">
+		<h2 class="style_guide">Combined Elements</h2>
+
+		<section>
+			<h2>Main Navigation</h2>
+
+			<nav class="main-navigation styleguide">
+				<a href="index.html">home</a>
+				<a href="index.html#projects">projects</a>
+				<a href="about.html">about</a>
+				<a href="contact.html">contact</a>
+			</nav>
+
+		</section>
+	</section>
+
+	<footer>
+		<a class="footer" href="style_guide.html?opacityTransition=true">style guide</a>
+		<a class="footer" href="citations.html?opacityTransition=true">citations</a>
+		<p class="footer">&copy; 2023 Jack Luo | JDesign. All rights reserved.</p>
+	</footer>
+
+	<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const queryParams = new URLSearchParams(window.location.search);
+            const opacityTransition = queryParams.get("opacityTransition");
+
+            if (opacityTransition === "true") {
+                // Function to change background opacity
+                function changeBackgroundOpacity(newOpacity) {
+                    document.body.style.backgroundColor = `rgba(232, 247, 250, ${newOpacity})`;
+                }
+
+                changeBackgroundOpacity(0.5); // Reduce opacity initially
+
+                setTimeout(function () {
+                    let opacityValue = 0.5;
+                    const opacityChangeInterval = setInterval(function () {
+                        opacityValue += 0.01; // Incrementally increase opacity
+                        changeBackgroundOpacity(opacityValue);
+                        if (opacityValue >= 1) {
+                            clearInterval(opacityChangeInterval);
+                        }
+                    }, 10); // Interval for gradual opacity change
+                }, 1000); // Delay opacity change
+            }
+        });
+    </script>
+
+</body>
+</html>

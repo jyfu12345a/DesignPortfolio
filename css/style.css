@@ -1,0 +1,675 @@
+/* :root referenced from: https://developer.mozilla.org/en-US/docs/Web/CSS/:root */
+/* Colour Settings */
+:root {
+	--primary-bg-colour: #E8F7FA;    /* Soft Mint Blue*/
+	--primary-text-colour: #000000;  /* Black */
+	--accent-colour: #68c3D4;        /* Sky Blue */
+	--neutral-colour: white;		 /* White */
+}
+
+/* Fonts Setting */
+@font-face {
+	font-family: "Quark"; /* Font name to use in font-family property */
+	src: url("../fonts/Quark-Bold.otf") format('opentype');
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url("../fonts/Lato-Light.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "Lato-Bold";
+	src: url("../fonts/Lato-Bold.ttf") format('truetype');
+}
+
+body {
+	margin-left: 2rem;
+	margin-right: 2rem;
+	padding: 0;
+	background-color: var(--primary-bg-colour);
+	opacity: 1; /* Full opacity */
+  	transition: background-color 1s ease, opacity 1s ease; /* Transition properties */
+	cursor: url("../assets/circle_cursor.png"), auto;
+}
+
+header {
+	display:block;
+	margin-top: 2rem;
+}
+
+div.introduction {
+	max-width: 1000px;
+	padding: 5rem;
+	text-align: left;
+}
+
+h1.introduction {
+	font-size: 80px;
+	line-height: 1em;
+	letter-spacing: 2px;
+	margin-bottom: -2rem;
+}
+
+p.introduction {
+	font-size: 50px;
+}
+
+section {
+	display:flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+li {
+	font-family: "Lato-Bold";
+	margin-left: 1rem;
+}
+
+p {
+	font-family: "Lato";
+	font-size: 1.125rem;
+}
+
+h1 {
+	font-family: "Quark";
+	font-size:3rem;
+	color: var(--primary-text-colour);
+}
+
+h2 {
+	font-family: "Quark";
+	font-size:2rem;
+	color: var(--primary-text-colour);
+}
+
+h2.style_guide {
+	font-family: "Quark";
+	font-size:3rem;
+	color:var(--accent-colour);
+	text-transform:uppercase;
+	margin-top:2rem;
+}
+
+h2.project_title {
+	font-family: "Quark";
+	font-size: 40px;
+	color: var(--primary-text-colour);
+	margin-bottom:0;
+}
+
+h3{
+	font-family: "Lato";
+	font-size:1.5rem;
+	color:var(--primary-text-colour)
+}
+
+h4 {
+	font-family: "Lato";
+	color: var(--primary-text-colour);
+}
+
+h5,h6 {
+	font-family: "Lato";
+	color: var(--primary-text-colour);
+}
+
+img {
+	max-width:100%;
+	display:inline-block;
+}
+
+img:hover {
+	opacity:50%;
+	cursor: url("../assets/square_cursor.png"), pointer;
+}
+
+img.icon {
+	box-sizing: border-box;
+	vertical-align: middle;
+	margin-top: 1rem;
+	border: 0;
+	width:60px;
+}
+
+input.field {
+	display:block;
+}
+
+nav.main-navigation.styleguide {
+	float:none;
+	display:block;
+	font-family: "Lato-Bold";
+	text-transform:uppercase;
+	margin:auto;
+	align-items: right;
+}
+
+nav.main-navigation {
+	float:right;
+	display:block;
+	font-family: "Lato-Bold";
+	text-transform:uppercase;
+	padding-top:2rem;
+	margin:auto;
+	align-items: right;
+}
+
+nav.main-navigation>a {
+	text-decoration:none;
+	color:#000000;
+	margin-right:2rem;
+}
+
+nav.main-navigation>a:last-child {
+	margin-right:2rem;
+}
+
+nav.main-navigation>a:hover {
+	color:var(--accent-colour);
+	transition:color 0.2s;
+}
+
+a {
+	font-family: "Lato-Bold";
+	text-decoration:none;
+	color:#000000;
+}
+
+a:hover {
+	color:var(--accent-colour);
+	transition:color 0.2s;
+	cursor: url("../assets/square_cursor.png"), pointer;
+}
+
+a.button:hover {
+	color:var(--neutral-colour);
+}
+
+input {
+	font-family: "Lato";
+}
+
+label {
+	font-family: "Quark";
+}
+
+button {
+	display:inline-block;
+	background-color:var(--primary-text-colour);
+	color:white;
+	font-family: "Lato-Bold";
+	padding:0.5rem;
+	border:none;
+	border-radius: 0.5rem;
+	transition: background-color 0.2s;
+}
+
+button>a{
+	color:white;
+	text-decoration:none;
+}
+
+button:hover{
+	background-color:var(--accent-colour);
+	transition: background-color 0.2s;
+}
+
+div.block-container{
+	display:flex;
+	justify-content: flex-start;
+}
+
+div.block-item{
+	margin-right:5rem;
+}
+
+p.header-font {
+	font-family: "Quark", sans-serif;
+	font-size:5rem;
+	max-height: 4rem;
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+p.body-font {
+	font-family: "Lato", sans-serif;
+	font-size:5rem;
+	max-height: 4rem;
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+p.header-font-example {
+	font-family: "Quark", sans-serif;
+	font-size:3rem;
+	max-height: 3rem;	
+}
+
+p.body-font-example {
+	font-family: "Lato", sans-serif;
+	font-size:3rem;
+	max-height: 3rem;
+}
+
+p.component-detail {
+	margin-top:-2rem;
+	color:#aaa;
+}
+
+div.swatch {
+	height:5rem;
+	max-width:180px;
+	width:180px;
+	margin-top:1rem;
+	border-radius: 0.25rem;
+  	outline: 3px solid black;
+}
+
+div.swatch#primary-text {
+	background-color:#000000; ;
+}
+div.swatch#primary-bg {
+	background-color:#E8F7FA;
+}
+div.swatch#accent {
+	background-color:#68c3D4;
+}
+
+p.swatch-detail {
+	margin-top:0.5rem;
+	color:#aaa;
+}
+
+p.citation {
+	padding-left:2rem;
+	text-indent:-2rem;
+}
+
+a.footer {
+	font-family: "Lato-Bold";
+	text-transform:uppercase;
+	text-decoration:none;
+	color:#000000;
+	margin-right:1rem;
+}
+
+a.footer:hover {
+	color:var(--accent-colour);
+	transition:color 0.2s;
+}
+
+p.footer {
+	font-family: "Lato-Bold";
+}
+
+footer {
+	margin-top: 100px;
+	max-width: 100%;
+	color: black;
+	text-align: center;
+	padding: 1rem;
+}
+
+section.container {
+	max-width: 90%;
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+div.project {
+	display:flex;
+	flex-direction: column;
+}
+
+div.project_box1 {
+	max-width: 45%;
+    padding: 0 20px 20px;
+}
+
+div.project_box2 {
+	max-width: 100%;
+	align-content: center;
+}
+
+div.background_watermark {
+	position: relative;
+}
+
+h1.background {
+	user-select: none;
+	font-size: 830px;
+	opacity: 5%;
+	position: absolute;
+	left: 77%;
+	margin-top: -50px;
+	width:0px;
+	height:0px;
+}
+
+div.project_header {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+img.frij, img.kbd {
+    max-width: 70%;
+    height: auto;
+    object-fit: cover;
+	margin-left:20%;
+}
+
+/* About - Page */
+div.about_container {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content:space-between;
+	padding-bottom: 5rem;
+}
+
+div.left_container {
+	max-width: 40%;
+	padding: 2rem;
+	margin-right: 10rem;
+	margin-top:1rem;
+}
+
+div.right_container {
+	display:flex;
+	flex-direction: column;
+	max-width: 40%;
+	padding: 1rem;
+	margin-top:7rem;
+}
+
+img.about {
+	max-width:300px;
+	width:300px;
+	height:400px;
+	object-fit: cover;
+}
+
+img.about:hover {
+	opacity: 100%;
+	scale: 115%;
+	transition: all 0.3s ease-in;
+}
+
+/* Contact - Page */
+div.contact_container {
+	padding: 2rem;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content:flex-start;
+}
+
+div.contact_box1 {
+	max-width: 500px;
+	margin-right: 7rem;
+}
+
+div.contact_box2 {
+	max-width: 500px;
+	margin-right: 25%;
+}
+
+h2.contact {
+	margin-left:2rem;
+	margin-top: 4rem;
+}
+
+h3.contact_sentence {
+	margin-left: 2rem;
+}
+
+h4.contact {
+	font-family: "Quark";
+	margin-bottom: -1.5rem;
+}
+
+h3.contact:hover {
+	color:var(--accent-colour);
+}
+
+div.line {
+	display: inline-block;
+	background-color: var(--primary-text-colour);
+	width:5rem;
+	height:3px;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+}
+
+div.contact_form {
+    background-color: var(--primary-bg-colour);
+    padding: 3rem;
+    border-radius: 10px;
+    margin: 1rem;
+	margin-top: -5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div.contact_form h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-text-colour);
+}
+
+div.contact_form label {
+    display: block;
+    font-family: "Quark";
+    color: var(--primary-text-colour);
+    margin-top: 1rem;
+}
+
+div.contact_form input,
+div.contact_form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: 1rem;
+	font-family: "Lato";
+}
+
+div.contact_form button {
+	margin-top: 1rem;
+    background-color: var(--primary-text-colour);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-family: "Lato-Bold";
+    cursor: pointer;
+}
+
+div.contact_form button:hover {
+	background-color: var(--accent-colour);
+}
+
+/** Project Pages **/
+div.frij_information_container div.kbdfans_information_container{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+div.overview_container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-top: -1.5rem;
+	
+}
+
+div.overview_boxes {
+	max-width: 250px;
+}
+
+div.banner_box {
+	display: flex;
+	justify-content: center;
+	margin-top: 5rem;
+}
+
+img.banner {
+	max-width: 40%;
+	display:inline-block;
+	object-fit: cover;
+}
+
+img.banner:hover {
+	opacity:100%;
+}
+
+h2.overview_text {
+	margin-bottom: 0;
+}
+
+div.overview_line {
+	display: inline-block;
+	background-color: var(--primary-text-colour);
+	width:5rem;
+	height:3px;
+	border-radius: 1rem;
+	margin-bottom: 0;
+}
+
+div.process_week {
+	max-width: 75%;
+}
+
+div.process_section {
+	max-width: 75%;
+}
+
+p.video_descrip {
+	font-family: "Lato-Bold"
+}
+
+@media only screen and (max-width:1510px){
+	div.contact_form {
+		margin-top: 2rem;
+	}
+	video {
+		width:900px;
+		height:440px;
+	}
+}
+
+@media only screen and (max-width:1250px){
+	h1.background {
+		font-size:0;
+	}
+
+	div.contact_form {
+		margin-top: 2rem;
+	}
+
+	video {
+		width:800px;
+		height:340px;
+	}
+}
+
+@media only screen and (max-width:960px){
+	div.introduction {
+		max-width: 960px;
+		padding: 3rem;
+		text-align: left;
+		
+	}
+	
+	h1.introduction {
+		font-size: 60px;
+		line-height: 1em;
+		letter-spacing: 2px;
+		margin-bottom: -1rem;
+	}
+
+	p.introduction {
+		font-size: 30px;
+	}
+
+	h1.background {
+		font-size:0;
+	}
+
+	div.left_container {
+		max-width: 480px;
+		margin-top:1rem;
+		margin-right: 0;
+	}
+
+	div.contact_form {
+		margin-top: 2rem;
+	}
+
+	video {
+		width:700px;
+		height:240px;
+	}
+}
+
+@media only screen and (max-width:480px){
+	header {
+		margin-bottom:5rem;
+	}
+
+	div.introduction {
+		max-width: 480px;
+		padding: 1rem;
+		text-align: left;
+	}
+	
+	h1.introduction {
+		font-size: 50px;
+		line-height: 1em;
+		letter-spacing: 2px;
+		margin-bottom: 0;
+	}
+
+	p.introduction {
+		font-size: 20px;
+	}
+
+	h1.background {
+		font-size:0;
+	}
+
+	div.project_box1 {
+		max-width: 70%;
+		padding: 0 20px 20px;
+	}
+
+	h1 {
+		font-size:2rem;
+	}
+	
+	h2 {
+		font-size:1rem;
+	}
+
+	h2.project_title {
+		font-size: 30px;
+	}
+
+	div.left_container {
+		max-width: 480px;
+		margin-top:1rem;
+		margin-right: 0;
+	}
+
+	div.contact_form {
+		margin-top: 2rem;
+	}
+
+	video {
+		width:380px;
+		height:150px;
+	}
+}

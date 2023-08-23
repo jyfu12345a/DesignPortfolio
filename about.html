@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JDesign•About</title>
+
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <header>
+        <a href="https://www.linkedin.com/in/jack-yong-fu-luo/">
+            <img class="icon" src="assets/linkedin_icon.png" alt="linkedin_logo">
+        </a>
+        <nav class="main-navigation">
+			<a href="index.html?opacityTransition=true">home</a>
+			<a href="index.html#projects">projects</a>
+			<a href="about.html?opacityTransition=true">about</a>
+			<a href="contact.html?opacityTransition=true">contact</a>
+		</nav>
+    </header>
+
+    <div class="about_container">
+        <div class="left_container">
+            <h2>Hello there,</h2>
+            <h3>I'm Jack Luo, a passionate and creative 4th-year student studying 
+                in the School of Interactive Arts & Technology program at 
+                Simon Fraser University.</h3>
+            <p>From a young age, I've been captivated by the fascinating power of design and its ability to shape emotions and interactions. As I honed my skills, I discovered a particular affinity for UI/UX design—the unison of art and technology that enables me to create seamless, user-centered interfaces that lead to delightful and intuitive experiences.</p>
+            <p>Gaming has been more than just a hobby for me; it's a passion that has shaped my creative vision. From exploring enchanting virtual worlds to uncovering compelling narratives, I've found profound inspiration in the immersive stories and captivating elements that video games exhibits.</p>
+            <p>My mission as a UI/UX designer is to bridge the gap between users and technology, ensuring that every interaction is an effortless and enjoyable journey. I strive to create visually stunning, intuitive interfaces that not only enhance usability but also amplify a clear communication between players and the virtual interface.</p>
+            <br>
+            <div class="line"></div>
+            <p>My dream is to contribute my skills and expertise to Riot Games, a trailblazing company known for its dedication to creating legendary gaming experiences. I am deeply inspired by Riot's commitment to excellence and innovation, and I see myself as an integral part of their creative force, helping to further Riot Games through thoughtful and immersive UI/UX design.</p>
+            <p>In my design portfolio, you'll find a showcase of projects that demonstrate my diverse skill set and ability to adapt to different challenges and environments. From clean and minimalist interfaces that streamline interactions to rich and dynamic designs that enhances communication within user experience.</p>
+            <br>
+            <button><a class="button" href="#">VIEW RESUMÉ</a></button>
+        </div>
+
+        <div class="right_container">
+            <div>
+                <img class="about" src="assets/self_img1.jpg" alt="Image1 of Jack">
+                <img class="about" src="assets/self_img2.jpg" alt="Image2 of Jack">
+            </div>
+            <div>
+                <img class="about" src="assets/self_img3.jpg" alt="Image3 of Jack">
+                <img class="about" src="assets/self_img4.jpg" alt="Image4 of Jack">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a class="footer" href="style_guide.html?opacityTransition=true">style guide</a>
+        <a class="footer" href="citations.html?opacityTransition=true">citations</a>
+		<p class="footer">&copy; 2023 Jack Luo | JDesign. All rights reserved.</p>
+	</footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const queryParams = new URLSearchParams(window.location.search);
+            const opacityTransition = queryParams.get("opacityTransition");
+
+            if (opacityTransition === "true") {
+                // Function to change background opacity
+                function changeBackgroundOpacity(newOpacity) {
+                    document.body.style.backgroundColor = `rgba(232, 247, 250, ${newOpacity})`;
+                }
+
+                changeBackgroundOpacity(0.5); // Reduce opacity initially
+
+                setTimeout(function () {
+                    let opacityValue = 0.5;
+                    const opacityChangeInterval = setInterval(function () {
+                        opacityValue += 0.01; // Incrementally increase opacity
+                        changeBackgroundOpacity(opacityValue);
+                        if (opacityValue >= 1) {
+                            clearInterval(opacityChangeInterval);
+                        }
+                    }, 10); // Interval for gradual opacity change
+                }, 1000); // Delay opacity change
+            }
+        });
+    </script>
+</body>
+</html>
